@@ -118,7 +118,7 @@ function stringToSign (options) {
     [ options.verb
     , options.md5
     , options.contentType
-    , options.date.toUTCString()
+    , options.date ? options.date.toUTCString() : ''
     , headers + options.resource
     ]
   return r.join('\n')
